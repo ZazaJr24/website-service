@@ -1,0 +1,55 @@
+name: Website-Anfrage / Website inquiry
+description: Unverbindlich eine kleine Website oder Korrektur anfragen.
+title: "[Anfrage] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Diese Anfrage ist öffentlich und unverbindlich. Bitte keine Zugangsdaten, Kundendaten, Zahlungsinformationen oder privaten Dokumente eintragen. Deutsch oder Englisch ist willkommen.
+  - type: dropdown
+    id: project_type
+    attributes:
+      label: Aufgabe / Task
+      options:
+        - Neue statische Website / New static website
+        - Bestehende Seite korrigieren / Fix an existing site
+        - Layout auf Handy verbessern / Improve mobile layout
+        - Andere Website-Aufgabe / Other website task
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Was soll entstehen oder sich ändern? / What should change?
+      description: Beschreibe den gewünschten Umfang und woran du ein fertiges Ergebnis erkennen würdest.
+    validations:
+      required: true
+  - type: input
+    id: public_url
+    attributes:
+      label: Öffentliche Website / Public website (optional)
+      description: Nur eine öffentliche URL ohne Anmeldetoken oder private Daten.
+  - type: input
+    id: budget
+    attributes:
+      label: Budgetrahmen / Budget range
+      placeholder: "z. B. 50–100 € / e.g. €50–100"
+    validations:
+      required: true
+  - type: input
+    id: deadline
+    attributes:
+      label: Wunschtermin / Preferred date (optional)
+      description: Ein Wunschtermin ist noch keine zugesagte Lieferfrist.
+  - type: textarea
+    id: content
+    attributes:
+      label: Inhalte und Technik / Content and technology (optional)
+      description: Sind Texte und Bilder vorhanden? Welche Technik nutzt die bestehende Seite? Keine Dateien oder Zugangsdaten hier veröffentlichen.
+  - type: checkboxes
+    id: public_notice
+    attributes:
+      label: Öffentliche Anfrage / Public inquiry
+      options:
+        - label: Ich habe keine vertraulichen Informationen eingetragen. / I have included no confidential information.
+          required: true
